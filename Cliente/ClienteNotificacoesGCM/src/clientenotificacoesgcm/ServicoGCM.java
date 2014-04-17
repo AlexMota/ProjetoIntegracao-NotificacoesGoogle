@@ -1,4 +1,4 @@
-package com.example.clientenotificacoesgcm;
+package clientenotificacoesgcm;
 
 import android.app.IntentService;
 import android.app.NotificationManager;
@@ -10,6 +10,7 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.example.clientenotificacoesgcm.R;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 public class ServicoGCM extends IntentService {

@@ -1,4 +1,4 @@
-package com.example.clientenotificacoesgcm;
+package clientenotificacoesgcm;
 
 import android.content.Intent;
 

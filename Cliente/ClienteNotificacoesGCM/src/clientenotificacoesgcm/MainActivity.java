@@ -1,4 +1,6 @@
-package com.example.clientenotificacoesgcm;
+package clientenotificacoesgcm;
+
+import com.example.clientenotificacoesgcm.R;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;

@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.clientenotificacoesgcm.MainActivity"
+            android:name="clientenotificacoesgcm.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.clientenotificacoesgcm.DemoActivity"
+            android:name="clientenotificacoesgcm.DemoActivity"
             android:label="@string/title_activity_demo" >
         </activity>
     </application>

@@ -1,4 +1,6 @@
-package com.example.clientenotificacoesgcm;
+package clientenotificacoesgcm;
+
+import com.example.clientenotificacoesgcm.R;
 
 import android.os.Bundle;
 import android.app.Activity;
