@@ -1056,6 +1056,10 @@ containing a value of this type.
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
+
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    
          */
         public static final int activity_horizontal_margin=0x7f0a0011;
         public static final int activity_vertical_margin=0x7f0a0012;
@@ -1295,12 +1299,14 @@ containing a value of this type.
         public static final int abc_popup_menu_item_layout=0x7f030014;
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
-        public static final int activity_main=0x7f030017;
-        public static final int fragment_main=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int activity_demo=0x7f030017;
+        public static final int activity_main=0x7f030018;
+        public static final int fragment_main=0x7f030019;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
     }
     public static final class menu {
-        public static final int main=0x7f0c0000;
+        public static final int demo=0x7f0c0000;
+        public static final int main=0x7f0c0001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1443,6 +1449,7 @@ containing a value of this type.
         /**  Location client code resources (prefix with location_client) 
          */
         public static final int location_client_powered_by_google=0x7f07001a;
+        public static final int title_activity_demo=0x7f07002b;
     }
     public static final class style {
         /** 

@@ -374,10 +374,12 @@ int layout abc_list_menu_item_radio 0x7f030013
 int layout abc_popup_menu_item_layout 0x7f030014
 int layout abc_search_dropdown_item_icons_2line 0x7f030015
 int layout abc_search_view 0x7f030016
-int layout activity_main 0x7f030017
-int layout fragment_main 0x7f030018
-int layout support_simple_spinner_dropdown_item 0x7f030019
-int menu main 0x7f0c0000
+int layout activity_demo 0x7f030017
+int layout activity_main 0x7f030018
+int layout fragment_main 0x7f030019
+int layout support_simple_spinner_dropdown_item 0x7f03001a
+int menu demo 0x7f0c0000
+int menu main 0x7f0c0001
 int string abc_action_bar_home_description 0x7f07001c
 int string abc_action_bar_up_description 0x7f07001d
 int string abc_action_menu_overflow_description 0x7f07001e
@@ -421,6 +423,7 @@ int string common_signin_button_text 0x7f070012
 int string common_signin_button_text_long 0x7f070013
 int string hello_world 0x7f070029
 int string location_client_powered_by_google 0x7f07001a
+int string title_activity_demo 0x7f07002b
 int style AppBaseTheme 0x7f0b0083
 int style AppTheme 0x7f0b0084
 int style TextAppearance_AppCompat_Base_CompactMenu_Dialog 0x7f0b0063
