@@ -13,14 +13,14 @@ import android.util.Log;
 import com.example.clientenotificacoesgcm.R;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
-public class ServicoGCM extends IntentService {
+public class GcmIntentService extends IntentService {
 
 	private static final int NOTIFICATION_ID = 1;
 	private static final String TAG = null;
 	private NotificationManager mNotificationManager;
 	NotificationCompat.Builder builder;
 
-	public ServicoGCM(String name) {
+	public GcmIntentService(String name) {
 		super(name);
 		// TODO Auto-generated constructor stub
 	}
