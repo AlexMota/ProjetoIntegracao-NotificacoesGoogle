@@ -1,16 +1,13 @@
 package clientenotificacoesgcm;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.WakefulBroadcastReceiver;
 
-public class GCMBrodcastReceiver extends WakefulBroadcastReceiver{
+public class GcmBroadcastReceiver extends WakefulBroadcastReceiver{
 
-	public static void completeWakefulIntent(Intent intent) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
@@ -18,8 +15,8 @@ public class GCMBrodcastReceiver extends WakefulBroadcastReceiver{
 		
 		ComponentName componentName = new ComponentName(context.getPackageName(), GcmIntentService.class.getName());
 		
-		
-		
+		startWakefulService(context, intent.setComponent(componentName));
+		setResultCode(Activity.RESULT_OK);	
 	}
 
 }
