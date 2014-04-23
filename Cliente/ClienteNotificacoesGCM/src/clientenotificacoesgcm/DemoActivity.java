@@ -8,17 +8,17 @@ import android.view.Menu;
 
 public class DemoActivity extends Activity {
 
+    public static final String EXTRA_MESSAGE = "message";
+    public static final String PROPERTY_REG_ID = "registration_id";
+    private static final String PROPERTY_APP_VERSION = "appVersion";
+    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_demo);
+		setContentView(R.layout.activity_main);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.demo, menu);
-		return true;
-	}
 
 }
