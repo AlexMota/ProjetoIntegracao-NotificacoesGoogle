@@ -42,6 +42,12 @@ public class MainActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_main);
 		mDisplay = (TextView) findViewById(R.id.display);
 		
+		context = getApplicationContext();
+		
+		if(checkPlayServices()){
+			
+		}
+		
 	}
 
 

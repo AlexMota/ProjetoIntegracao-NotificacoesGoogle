@@ -295,7 +295,7 @@ int id action_context_bar 0x7f060020
 int id action_menu_divider 0x7f060019
 int id action_menu_presenter 0x7f06001a
 int id action_mode_close_button 0x7f060027
-int id action_settings 0x7f060040
+int id action_settings 0x7f060041
 int id activity_chooser_view_content 0x7f060028
 int id always 0x7f06000f
 int id beginning 0x7f060014
@@ -326,6 +326,7 @@ int id progress_circular 0x7f06001b
 int id progress_horizontal 0x7f06001c
 int id radio 0x7f060032
 int id satellite 0x7f060002
+int id scrollView1 0x7f060040
 int id search_badge 0x7f060035
 int id search_bar 0x7f060034
 int id search_button 0x7f060036
