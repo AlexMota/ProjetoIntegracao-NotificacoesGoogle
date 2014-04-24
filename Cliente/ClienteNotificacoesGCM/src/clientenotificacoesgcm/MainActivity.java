@@ -1,19 +1,15 @@
 package clientenotificacoesgcm;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.example.clientenotificacoesgcm.R;
-import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.annotation.SuppressLint;
+
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -22,11 +18,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+
 import android.widget.TextView;
 import android.os.Build;
 
@@ -49,11 +41,12 @@ public class MainActivity extends ActionBarActivity {
 
 
 
+	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mDisplay = (TextView) findViewById(R.id.display);
+		mDisplay = (TextView) findViewById(R.id.textView1);
 
 		context = getApplicationContext();
 
