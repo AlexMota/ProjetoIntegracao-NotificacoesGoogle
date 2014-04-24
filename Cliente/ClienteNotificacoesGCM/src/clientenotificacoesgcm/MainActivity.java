@@ -1,6 +1,5 @@
 package clientenotificacoesgcm;
 
-import DemoActivity;
 
 import java.sql.Connection;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -94,6 +93,11 @@ public class MainActivity extends ActionBarActivity {
 		}
 
 	}
+	
+	 protected void onDestroy() {
+	        super.onDestroy();
+	    }
+
 	
 	private static int getAppVersion(Context context){
 		
