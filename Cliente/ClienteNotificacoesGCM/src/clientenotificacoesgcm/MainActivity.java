@@ -73,10 +73,14 @@ public class MainActivity extends ActionBarActivity {
 				Context.MODE_PRIVATE);
 	}
 
+	private void sendRegistrationIdToBackend() {
+	
+	}
+
 	private String getRegistrationId(Context context) {
-		
+
 		final SharedPreferences prefs = getGcmPreferences(context);
-		
+
 		return null;
 	}
 
