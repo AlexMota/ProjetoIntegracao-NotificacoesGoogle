@@ -1,6 +1,6 @@
 package clientenotificacoesgcm;
 
-
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -17,6 +17,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -68,15 +69,6 @@ public class MainActivity extends ActionBarActivity {
 		return true;
 	}
 
-
-
-	private String getRegistrationId(Context context) {
-
-		final SharedPreferences prefs = getGcmPreferences(context);
-
-		return null;
-	}
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -93,24 +85,81 @@ public class MainActivity extends ActionBarActivity {
 		}
 
 	}
-	
-	 protected void onDestroy() {
-	        super.onDestroy();
-	    }
 
-	
-	private static int getAppVersion(Context context){
-		
+	private void storeRegistrationId(Context context, String regId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	private String getRegistrationId(Context context) {
+
+		final SharedPreferences prefs = getGcmPreferences(context);
+		String registrationId = prefs.getString(PROPERTY_REG_ID, "");
+
+		if (registrationId.isEmpty()) {
+			Log.i(TAG, "Registration not found.");
+			return "";
+
+		}
+
+		int registeredVersion = prefs.getInt(PROPERTY_APP_VERSION,
+				Integer.MIN_VALUE);
+		int currentVersion = getAppVersion(context);
+
+		if (registeredVersion != currentVersion) {
+			Log.i(TAG, "App version changed.");
+			return "";
+		}
+
+		return registrationId;
+	}
+
+	private void registerInBackground() {
+		new AsyncTask<Void, Void, String>() {
+			@Override
+			protected String doInBackground(Void... params) {
+				String msg = "";
+				try {
+					if (gcm == null) {
+						gcm = GoogleCloudMessaging.getInstance(context);
+					}
+					regId = gcm.register(SENDER_ID);
+					msg = "Device registered, registration ID=" + regId;
+
+					sendRegistrationIdToBackend();
+
+					storeRegistrationId(context, regId);
+				} catch (IOException ex) {
+					msg = "Error :" + ex.getMessage();
+
+				}
+				return msg;
+			}
+
+			@Override
+			protected void onPostExecute(String msg) {
+				mDisplay.append(msg + "\n");
+			}
+		}.execute(null, null, null);
+	}
+
+	protected void onDestroy() {
+		super.onDestroy();
+	}
+
+	private static int getAppVersion(Context context) {
+
 		try {
-			PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+			PackageInfo packageInfo = context.getPackageManager()
+					.getPackageInfo(context.getPackageName(), 0);
 			return packageInfo.versionCode;
 		} catch (NameNotFoundException e) {
 			// TODO: handle exception
 			throw new RuntimeException(e);
 		}
-		
+
 	}
-	
+
 	private SharedPreferences getGcmPreferences(Context context) {
 
 		return getSharedPreferences(MainActivity.class.getSimpleName(),
@@ -118,7 +167,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 
 	private void sendRegistrationIdToBackend() {
-	
+
 	}
 
 }
