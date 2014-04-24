@@ -13,6 +13,8 @@ import com.google.android.gms.gcm.GoogleCloudMessaging;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
@@ -88,17 +90,28 @@ public class MainActivity extends ActionBarActivity {
 
 	private void storeRegistrationId(Context context, String regId) {
 		// TODO Auto-generated method stub
+		
+        final SharedPreferences prefs = getGcmPreferences(context);
+        int appVersion = getAppVersion(context);
+        Log.i(TAG, "Saving regId on app version " + appVersion);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(PROPERTY_REG_ID, regId);
+        editor.putInt(PROPERTY_APP_VERSION, appVersion);
+        editor.commit();
+
+		
 
 	}
 
+	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	private String getRegistrationId(Context context) {
 
-		final SharedPreferences prefs = getGcmPreferences(context);
-		String registrationId = prefs.getString(PROPERTY_REG_ID, "");
-
-		if (registrationId.isEmpty()) {
+	    final SharedPreferences prefs = getGcmPreferences(context);
+	    String registrationId = prefs.getString(PROPERTY_REG_ID, "");
+	    if (registrationId.isEmpty()) {
 			Log.i(TAG, "Registration not found.");
 			return "";
+			
 
 		}
 
