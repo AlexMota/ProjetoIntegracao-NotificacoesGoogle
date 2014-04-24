@@ -16,6 +16,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -67,15 +69,7 @@ public class MainActivity extends ActionBarActivity {
 		return true;
 	}
 
-	private SharedPreferences getGcmPreferences(Context context) {
 
-		return getSharedPreferences(MainActivity.class.getSimpleName(),
-				Context.MODE_PRIVATE);
-	}
-
-	private void sendRegistrationIdToBackend() {
-	
-	}
 
 	private String getRegistrationId(Context context) {
 
@@ -99,6 +93,28 @@ public class MainActivity extends ActionBarActivity {
 
 		}
 
+	}
+	
+	private static int getAppVersion(Context context){
+		
+		try {
+			PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+			return packageInfo.versionCode;
+		} catch (NameNotFoundException e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);
+		}
+		
+	}
+	
+	private SharedPreferences getGcmPreferences(Context context) {
+
+		return getSharedPreferences(MainActivity.class.getSimpleName(),
+				Context.MODE_PRIVATE);
+	}
+
+	private void sendRegistrationIdToBackend() {
+	
 	}
 
 }
