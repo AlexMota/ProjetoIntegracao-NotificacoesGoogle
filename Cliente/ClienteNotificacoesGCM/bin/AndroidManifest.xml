@@ -37,6 +37,10 @@
             android:name="clientenotificacoesgcm.DemoActivity"
             android:label="@string/title_activity_demo" >
         </activity>
+        <activity
+            android:name="com.example.clientenotificacoesgcm.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,28 +1,25 @@
-package clientenotificacoesgcm;
+package com.example.clientenotificacoesgcm;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.example.clientenotificacoesgcm.R;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
-
-import android.support.v7.app.ActionBarActivity;
-
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-
 import android.widget.TextView;
-import android.os.Build;
 
-public class MainActivity extends ActionBarActivity {
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+public class MainActivity extends Activity {
 
 	public static final String EXTRA_MESSAGE = "message";
 	public static final String PROPERTY_REG_ID = "registration_id";
@@ -190,5 +187,6 @@ public class MainActivity extends ActionBarActivity {
 	private void sendRegistrationIdToBackend() {
 
 	}
+
 
 }
