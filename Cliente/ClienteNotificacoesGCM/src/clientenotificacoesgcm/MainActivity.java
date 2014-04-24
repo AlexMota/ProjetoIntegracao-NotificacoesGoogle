@@ -47,6 +47,38 @@ public class MainActivity extends ActionBarActivity {
 
 	String regId;
 
+
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		mDisplay = (TextView) findViewById(R.id.display);
+
+		context = getApplicationContext();
+
+		if (checkPlayServices()) {
+
+			gcm = GoogleCloudMessaging.getInstance(this);
+			regId = getRegistrationId(context);
+
+			if (regId.isEmpty()) {
+				registerInBackground();
+			}
+			
+		}else{
+            Log.i(TAG, "No valid Google Play Services APK found.");
+		}
+
+	}
+	
+    @Override
+    protected void onResume() {
+        super.onResume();
+        checkPlayServices();
+    }
+
+	
 	private boolean checkPlayServices() {
 		// TODO Auto-generated method stub
 
@@ -69,23 +101,6 @@ public class MainActivity extends ActionBarActivity {
 		}
 
 		return true;
-	}
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		mDisplay = (TextView) findViewById(R.id.display);
-
-		context = getApplicationContext();
-
-		if (checkPlayServices()) {
-
-			gcm = GoogleCloudMessaging.getInstance(this);
-			regId = getRegistrationId(context);
-
-		}
-
 	}
 
 	private void storeRegistrationId(Context context, String regId) {
