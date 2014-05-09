@@ -1,4 +1,4 @@
-package com.example.clientenotificacoesgcm;
+package clientenotificacoesgcm;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -15,6 +15,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.clientenotificacoesgcm.R;
+import com.example.clientenotificacoesgcm.R.id;
+import com.example.clientenotificacoesgcm.R.layout;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
