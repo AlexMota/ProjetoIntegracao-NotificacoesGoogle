@@ -16,7 +16,7 @@ import org.apache.http.message.BasicNameValuePair;
 public class ServidorGCM {
 
 	final String URL = "https://android.googleapis.com/gcm/send";
-	final String apiKey = "";
+	final String apiKey = "AIzaSyD4-Woy8xTAI-eQyWBS6R-jzQEKFYW7uE0";
 
 	public void enviarMensagem(String registrationID, String mensagem) {
 		CloseableHttpClient client = HttpClients.createDefault();
@@ -25,7 +25,7 @@ public class ServidorGCM {
 		HttpPost httpPost = new HttpPost(URL);
 
 		list.add(new BasicNameValuePair("registration_id", registrationID));
-		list.add(new BasicNameValuePair("data.price", mensagem));
+		list.add(new BasicNameValuePair("data.mensagem", mensagem));
 
 		httpPost.setHeader("Authorization", "key=" + apiKey);
 		httpPost.setHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
