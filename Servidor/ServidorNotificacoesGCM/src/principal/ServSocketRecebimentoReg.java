@@ -31,7 +31,6 @@ public class ServSocketRecebimentoReg implements Runnable{
 				
 				bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				
-				//System.out.println("Dado recebido: "+bufferedReader.readLine());
 				String reg = bufferedReader.readLine();
 				System.out.println("Dado recebido: "+reg);
 				servidorGCM.adicionarRegId(reg);

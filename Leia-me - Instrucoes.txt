@@ -1,0 +1,23 @@
+Trabalho de Integracao - Servidor e Cliente GCM
+
+Servidor:
+Aplicaçao java desktop, possui o serverKey(apiKey) que identifica o servidor do GCM. Para roda-la 
+usando outro projeto GCM é preciso trocar seu valor.
+Esse servidor recebe da aplicação cliente o registrationID, que identifica a mesma no GCM. Para receber
+esse dado utiliza Socket, atraves da porta 5000;
+Apos receber os registrationIDs dos cadastrados, o servidor envia mensagem aos mesmos. Para interagir com o servidor
+basta utilizar as opcoes do menu.
+
+
+Cliente:
+Aplicação java android. Para se gerar o registro do GCM ela possui o numero de indentificacao do projeto.
+Trocando de projeto GCM é preciso muda-la também. A aplicação envia esse registrationID para o servidor java atraves de socket, 
+utilizando a porta(também 5000) e o IP(localhost).
+Apos cadastrada no servidor a aplicação cliente recebe as notificacoes e as exibe na tela.
+
+Passos:
+
+1 - Execute primeiro o Servidor;
+2 - Depois execute o cliente android
+3 - Gere o regId no cliente, a gerar ele já será enviado ao servidor;
+4 - Interaja com o servidor, mande mensagem, exiba os cadastrados, troque a mensagem.
