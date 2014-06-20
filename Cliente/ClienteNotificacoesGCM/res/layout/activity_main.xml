@@ -9,7 +9,7 @@
         android:id="@+id/btnGetRegId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gerar Registration-ID"/>
+        android:text="Gerar RegID e enviar via socket para o Servidor"/>
     
     <EditText
         android:id="@+id/etRegId"
